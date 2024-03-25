@@ -9,11 +9,19 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-let input = [4, 5];
+// let input = [4, 5];
+
+// rl.on('line', function (line) {
+//   input = line.split(' ');
+// }).on('close', function () {
+//   console.log(`a = ${Number(input[0])}`);
+//   console.log(`b = ${Number(input[1])}`);
+// });
+
+let input = [];
 
 rl.on('line', function (line) {
   input = line.split(' ');
 }).on('close', function () {
-  console.log(`a = ${Number(input[0])}`);
-  console.log(`b = ${Number(input[1])}`);
+  console.log(Number(input[0]) + Number(input[1]));
 });
