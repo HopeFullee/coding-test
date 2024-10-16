@@ -12,7 +12,7 @@ const printOnce = () => {
     const a = Number(afterLine1[0]);
     const b = Number(afterLine1[1]);
 
-    result += `${a + b}\n`;
+    result += a + b + "\n";
   });
 
   console.log(result);
