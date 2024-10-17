@@ -1,5 +1,7 @@
 // https://www.acmicpc.net/problem/4344
 
+// P.S 오늘의 교훈 - 알고리즘 공부는 수포자 빡대가리에게 반강제로 기초 수학 학습을 시킨다.
+
 const input = require("fs")
   .readFileSync("/dev/stdin")
   .toString()
