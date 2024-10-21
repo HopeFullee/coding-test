@@ -25,6 +25,8 @@ const getMinMaxNumber1 = () => {
   시간 복잡도는 v1 보다 좋음
 
   내장 prototype 함수를 사용하여 clean 함으로 v2 압승
+
+  P.S 이래서 알고리즘 공부하는 듯
 */
 const getMinMaxNumber2 = () => {
   const maxNum = Math.max(...line2);
