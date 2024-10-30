@@ -1,4 +1,4 @@
-// merge sort 병합 정렬 라이브러리 사용 예시
+// javascirpt prototype sort 라이브러리 사용 예시
 
 // 정수(Number)에 대한 정렬 예시
 const numArr = [1, 8, 5, 9, 21, 3, 7, 2, 15];
@@ -66,9 +66,8 @@ const strCompare = (a, b) => {
 // 문자열(String)에 대한 정렬 예시 (대소문자 구분X)
 const capitalMixStrArr = ["pineapple", "Banana", "durian", "Apple", "carrot"];
 
-// 문자열 오름차순 정렬 예시 (대소문자 구분X)
-// 대소문자 구분 없는 내림차는 caseA 와 caseB의 계산 <=> 위치 변경
-const capitalMixStrComapre = (a, b) => {
+// 문자열 오름차순 정렬 예시 (대소문자 구분X) / 내림차는 caseA 와 caseB의 계산 <=> 위치 변경 (대소문자 구분 X)
+const capitalMixStrCompare = (a, b) => {
   const upperCaseA = a.toUpperCase();
   const upperCaseB = b.toUpperCase();
 
@@ -77,7 +76,21 @@ const capitalMixStrComapre = (a, b) => {
   else return 0;
 };
 
-capitalMixStrArr.sort(capitalMixStrComapre);
+capitalMixStrArr.sort(capitalMixStrCompare);
 
 // 실행 결과 ['Apple', 'Banana', 'carrot', 'durian', 'pineapple'] (대소문자 구분X)
 console.log(capitalMixStrArr);
+
+/**************************************************************************************************/
+
+// 객체(object)에 대한 정렬 예시
+const objArr = [
+  { name: "홍길동", score: 90 },
+  { name: "김철수", score: 85 },
+  { name: "박영희", score: 97 },
+];
+
+// 객체 오름차순 정렬 예시 / 내림차 경우 b - a
+const objCompare = (a, b) => {
+  return a.score - b.score;
+};
