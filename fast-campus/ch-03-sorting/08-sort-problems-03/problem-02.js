@@ -8,17 +8,18 @@ const input = require("fs")
 
 input.shift();
 
-const userInfoArr = input.map((val) => {
-  return val.split(" ");
+const userObjArr = input.map((testCase) => {
+  const user = testCase.split(" ");
+  const age = Number(user[0]);
+  const name = user[1];
+
+  return { age, name };
 });
 
-userInfoArr.sort((a, b) => {
-  const userA = { age: Number(a[0]), name: a[1] };
-  const userB = { age: Number(b[0]), name: b[1] };
+userObjArr.sort((a, b) => a.age - b.age);
 
-  return userA.age - userB.age;
-});
-
-const answer = userInfoArr.map((user) => user.join(" ")).join("\n");
+const answer = userObjArr.reduce((acc, user) => {
+  return acc + `${user.age} ${user.name}` + "\n";
+}, "");
 
 console.log(answer);
