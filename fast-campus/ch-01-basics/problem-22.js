@@ -1,7 +1,7 @@
 // https://www.acmicpc.net/problem/1316
 
 /* 
-  오늘의 교훈 - loop 시 조건에 부합하면 break 할수있는 every(), some() 을 사용하자
+  오늘의 교훈 - loop 시 조건에 부합하면 break 할수있는 every(), () 을 사용하자
                돌아야하는 length에 따라 멈출수 없는 forEach에 비해 시간복잡도면에서 좋아?보임?
 */
 
