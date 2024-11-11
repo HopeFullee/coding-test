@@ -13,4 +13,21 @@ coinVariations.sort((a, b) => {
   return b - a;
 });
 
-coinVariations.some(() => {});
+const getCoinCount = (targetAmount) => {
+  let answer = 0;
+  let remainingAmount = targetAmount;
+
+  coinVariations.some((coin) => {
+    while (coin <= remainingAmount) {
+      remainingAmount -= coin;
+      answer++;
+    }
+
+    if (remainingAmount === 0) return true;
+    else return false;
+  });
+
+  return answer;
+};
+
+console.log(getCoinCount(targetAmount));
