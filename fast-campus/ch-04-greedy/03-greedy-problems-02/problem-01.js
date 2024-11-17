@@ -22,6 +22,8 @@ if (n % 5 === 0) {
 console.log(cnt);
 
 // 강의 답안
+let flag = false;
+
 while (n >= 0) {
   if (n == 0 || n % 5 == 0) {
     cnt += n / 5;
