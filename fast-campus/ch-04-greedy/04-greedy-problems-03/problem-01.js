@@ -16,9 +16,24 @@ let minGasMoneySpent = BigInt(0);
 
 distanceArr.forEach((km, idx) => {
   const currGasPrice = gasPriceArr[idx];
+  // 조건부 if 없이, 현재 currGasPrice 와 기존 minGasPrice 값을 비교해 minGasPrice 갱신
   minGasPrice = Math.min(minGasPrice, currGasPrice);
 
   minGasMoneySpent += BigInt(minGasPrice) * BigInt(km);
 });
 
 console.log(minGasMoneySpent.toString());
+
+/*********************** 
+ 이전 조건부 형식의 코드 
+ ***********************/
+
+// distanceArr.forEach((km, idx) => {
+//   const currGasPrice = gasPriceArr[idx];
+
+//   if (minGasPrice > currGasPrice) {
+//     minGasPrice = currGasPrice;
+//   }
+
+//   minGasMoneySpent += minGasPrice * km;
+// });
