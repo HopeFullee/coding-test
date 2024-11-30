@@ -1,5 +1,8 @@
 // https://www.acmicpc.net/problem/17609
 
+// 수많은 메모리 초과와 시간 초과에 시달렸습니다.
+// two-pointer 형식으로 해결.
+
 const input = require("fs")
   .readFileSync("/dev/stdin")
   .toString()
