@@ -10,17 +10,19 @@ input.shift();
 
 const testCases = input.map(Number);
 
+const COINS = [25, 10, 5, 1];
+
 const answer = testCases.reduce((acc, change) => {
   let remain = change;
-  const quarter = parseInt(remain / 25);
-  remain %= 25;
-  const dime = parseInt(remain / 10);
-  remain %= 10;
-  const nickel = parseInt(remain / 5);
-  remain %= 5;
-  const penny = parseInt(remain / 1);
 
-  acc.push(`${quarter} ${dime} ${nickel} ${penny}`);
+  const usedCoins = COINS.reduce((acc, coin) => {
+    const count = parseInt(remain / coin);
+    remain %= coin;
+    acc.push(count);
+    return acc;
+  }, []);
+
+  acc.push(usedCoins.join(" "));
   return acc;
 }, []);
 
