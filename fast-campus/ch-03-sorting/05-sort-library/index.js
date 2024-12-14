@@ -94,3 +94,5 @@ const objArr = [
 const objCompare = (a, b) => {
   return a.score - b.score;
 };
+
+objArr.sort(objCompare);

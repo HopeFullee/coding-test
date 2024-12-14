@@ -4,6 +4,7 @@ const input = require("fs").readFileSync("/dev/stdin").toString().trim();
 
 let [a, b] = input.split(" ").map(Number);
 
+// 내 오답 ㅠㅠ 예제 문제상 틀린건 없음..
 // let answer = 0;
 
 // while (a <= b) {
@@ -24,6 +25,7 @@ let [a, b] = input.split(" ").map(Number);
 
 // console.log(answer);
 
+// 강의 답안
 let flag = false;
 let answer = 1;
 
