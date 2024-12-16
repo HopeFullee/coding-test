@@ -3,14 +3,14 @@
       - 코딩 테스트에서는 정렬된 배열에서 값이 특정 범위에 해당하는 원소의 개수를
         계산하는 것을 요구하는 경우가 종종 있다.
       - 이러한 문제를 해결하기 위해 lowerBound() 함수와 upperBound() 함수를 사용할 수 있다.
-          - lowerBound(arr, x): arr에 x(value)를 찾아 가장 왼쪽 인덱스를 반환
-          - upperBound(arr, x): arr에 x(value)를 찾아 가장 오른쪽 인덱스 + 1 을 반환
+          - lowerBound(arr, x): arr에 x(value)가 처음으로 등장하는 위치의 index 반환
+          - upperBound(arr, x): arr에 x(value)보다 다음으로 큰값의 index 반환
 
       - lowerBound 와 upperBound를 활용하여 정렬된 배열에서 특정 범위에 속하는 원소의 개수를 구할수있음.
           - 예시) 
             [1, 2, 2, 3, 4, 4, 5] 배열에서 
-            lowerBound(2): '2'의 값이 있는 가장 왼쪽(하한선)의 index 반환 = return 1
-            upperBound(4): '4'의 값이 있는 가장 오른쪽(상한선)의 index + 1 반환 = return 6
+            lowerBound(2): '2'가 처음으로 등장하는 위치의 index 반환 = return 1
+            upperBound(4): '4'보다 다음으로 큰값의 index 반환 = return 6
 
             upperBound.res(6) - lowerBound.res(1) = 5
             lowerBound(2) 부터 upperBound(4) 까지 사이에있는 [2, 2, 3, 4, 4] 5개의 원소 개수를 반환
