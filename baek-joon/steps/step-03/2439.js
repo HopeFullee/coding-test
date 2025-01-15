@@ -8,6 +8,5 @@ let str = "";
 
 [...Array(n)].forEach(() => {
   str += "*";
-  const space = " ".repeat(n - str.length);
-  console.log(space + str);
+  console.log(str.padStart(n));
 });
