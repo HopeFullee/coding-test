@@ -34,6 +34,8 @@ console.log(letterCount);
         고로 많은 양의 알고리즘 학습으로 다양한 prototype 함수를 사용하고 손과 머리에 익히는게 포인트.
 */
 
+// replaceAll에 사용 되는 정규식은 동일 단어를 여러번 찾기 위해
+// iterate 해야함으로 끝에 글로벌 표시인 /g 를 표기 해야함
 const croatiaRegex = /c=|c-|dz=|d-|lj|nj|s=|z=/g;
 
 console.log(input.replaceAll(croatiaRegex, "*").length);
