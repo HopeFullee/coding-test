@@ -1,5 +1,10 @@
 // https://www.acmicpc.net/problem/2563
 
+/*
+ 2시간 간의 사투 끝에 풀이 해답을 보았다... ㅠㅠ
+ 출처: https://nahwasa.com/entry/%EB%B0%B1%EC%A4%80-2563-%EC%83%89%EC%A2%85%EC%9D%B4-%EC%9E%90%EB%B0%94-C-C-nodejs-Kotlin-Python-C
+*/
+
 const input = require("fs")
   .readFileSync("/dev/stdin")
   .toString()
