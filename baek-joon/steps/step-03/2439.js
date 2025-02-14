@@ -8,5 +8,6 @@ let str = "";
 
 [...Array(n)].forEach(() => {
   str += "*";
-  console.log(str.padStart(n));
+
+  -console.log(str.padStart(n));
 });
