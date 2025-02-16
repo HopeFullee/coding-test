@@ -12,15 +12,15 @@ const input = require("fs").readFileSync("/dev/stdin").toString().trim();
 
 const x = Number(input);
 
-let step = 0;
+let diagonalStep = 0;
 let stepSum = 0;
 
 while (stepSum < x) {
-  stepSum += ++step;
+  stepSum += ++diagonalStep;
 }
 
-const direction = step % 2 ? "up" : "down";
-const row = direction === "up" ? stepSum - x + 1 : step - (stepSum - x);
-const col = step - (row - 1);
+const direction = diagonalStep % 2 ? "up" : "down";
+const row = direction === "up" ? stepSum - x + 1 : diagonalStep - (stepSum - x);
+const col = diagonalStep - (row - 1);
 
 console.log(`${row}/${col}`);
