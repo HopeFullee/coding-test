@@ -31,19 +31,52 @@
         ****************************************************************************
 */
 
+// sort 활용 안한 버전
+
 // const input = require("fs")
 //   .readFileSync("/dev/stdin")
 //   .toString()
 //   .trim()
 //   .split("\n");
 
+// input.forEach((line) => {
+//   if (line === "0 0 0") return;
+
+//   const arr = line.split(" ").map(Number);
+
+//   // 문제의 라인
+//   if (arr.reduce((acc, n) => acc + n) - Math.max(...arr) <= Math.max(...arr)) {
+//     console.log("Invalid");
+//     return;
+//   }
+
+//   const set = new Set(arr);
+
+//   if (set.size === 1) console.log("Equilateral");
+//   else if (set.size === 2) console.log("Isosceles");
+//   else if (set.size === 3) console.log("Scalene");
+// });
+
+/* 
+  ----------------------------------------------------------------------------
+*/
+
+// sort 활용한 버전
+const input = require("fs")
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split("\n");
+
+input.pop();
+
 input.forEach((line) => {
-  if (line === "0 0 0") return;
+  const arr = line
+    .split(" ")
+    .map(Number)
+    .sort((a, b) => a - b);
 
-  const arr = line.split(" ").map(Number);
-
-  // 문제의 라인
-  if (arr.reduce((acc, n) => acc + n) - Math.max(...arr) <= Math.max(...arr)) {
+  if (arr[0] + arr[1] <= arr[2]) {
     console.log("Invalid");
     return;
   }
