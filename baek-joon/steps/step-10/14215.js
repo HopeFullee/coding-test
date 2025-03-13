@@ -7,8 +7,6 @@ const input = require("fs")
   .split(" ")
   .map(Number);
 
-const input = [1, 100, 1];
-
 input.sort((a, b) => a - b);
 
 const [a, b, c] = input;
