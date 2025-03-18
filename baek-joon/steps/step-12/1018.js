@@ -1,10 +1,10 @@
 // https://www.acmicpc.net/problem/1018
 
-// const input = require("fs")
-//   .readFileSync("/dev/stdin")
-//   .toString()
-//   .trim()
-//   .split("\n");
+const input = require("fs")
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split("\n");
 
 const [n, m] = input.shift().split(" ").map(Number);
 
