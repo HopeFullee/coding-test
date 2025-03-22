@@ -1,8 +1,8 @@
 // https://www.acmicpc.net/problem/2839
 
-// const input = require("fs").readFileSync("/dev/stdin").toString().trim();
+const input = require("fs").readFileSync("/dev/stdin").toString().trim();
 
-// let n = Number(input);
+let n = Number(input);
 
 let count = 0;
 
