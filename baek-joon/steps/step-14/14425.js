@@ -1,4 +1,4 @@
-https://www.acmicpc.net/problem/14425
+//www.acmicpc.net/problem/14425
 
 const input = require("fs")
   .readFileSync("/dev/stdin")
@@ -6,19 +6,16 @@ const input = require("fs")
   .trim()
   .split("\n");
 
-const [n, m] = input[0].split(" ").map(Number);
+const [n, m] = input.shift().split(" ").map(Number);
 
-const mArr = new Set();
+const nArr = new Set(input.slice(0, n));
 
-for (let i = 1; i <= n; i++) {
-  mArr.add(input[i])
-}
+nArr;
 
 let count = 0;
 
-for (let i = n + 1; i <= n + m; i++) {
-  const mString = input[i];
-  if (mArr.has(mString)) count++;
+for (let i = n; i < n + m; i++) {
+  if (nArr.has(input[i])) count++;
 }
 
 console.log(count);
