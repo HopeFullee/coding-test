@@ -10,8 +10,6 @@ const [n, m] = input.shift().split(" ").map(Number);
 
 const nArr = new Set(input.slice(0, n));
 
-nArr;
-
 let count = 0;
 
 for (let i = n; i < n + m; i++) {
