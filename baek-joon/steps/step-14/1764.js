@@ -22,19 +22,30 @@ const input = [
   "clinton",
 ];
 
+/*********************************** 처음으로 푼 방법 ***********************************/
+
+// const [n, m] = input.shift().split(" ").map(Number);
+
+// const nSet = new Set(input.splice(0, n));
+
+// const arr = [];
+
+// input.forEach((m) => {
+//   if (nSet.has(m)) {
+//     arr.push(m);
+//   }
+// });
+
+// console.log(arr.length);
+// console.log(arr.sort().join("\n"));
+
+/*********************************** 멋쟁이 코딩 방법 ***********************************/
+
 const [n, m] = input.shift().split(" ").map(Number);
 
 const nSet = new Set(input.splice(0, n));
 
-let count = 0;
-const arr = [];
+const intersect = input.filter((m) => nSet.has(m)).sort();
 
-input.forEach((m) => {
-  if (nSet.has(m)) {
-    count++;
-    arr.push(m);
-  }
-});
-
-console.log(count);
-console.log(arr.sort().join("\n"));
+console.log(intersect.length);
+console.log(intersect.join("\n"));
