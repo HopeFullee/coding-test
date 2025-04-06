@@ -44,6 +44,4 @@ input.forEach((tc) => {
   else result.push("no");
 });
 
-result;
-
 console.log(result.join("\n"));

@@ -15,20 +15,47 @@ input.shift();
 
 const result = [];
 
+/*
+  ------------------------ 처음 풀어본 방법 ------------------------
+*/
+
+// input.forEach((tc) => {
+//   let leftCnt = 0;
+
+//   for (let i = 0; i < tc.length; i++) {
+//     if (leftCnt < 0) {
+//       break;
+//     } else if (tc[i] === "(") {
+//       leftCnt++;
+//     } else if (tc[i] === ")") {
+//       leftCnt--;
+//     }
+//   }
+
+//   if (leftCnt === 0) result.push("YES");
+//   else result.push("NO");
+// });
+
+/*
+  ------------------------ 스택 로직으로 풀어본 방법 ------------------------
+*/
+
 input.forEach((tc) => {
-  let leftCnt = 0;
+  const stack = [];
 
   for (let i = 0; i < tc.length; i++) {
-    if (leftCnt < 0) {
-      break;
-    } else if (tc[i] === "(") {
-      leftCnt++;
+    if (tc[i] === "(") {
+      stack.push("(");
+    } else if (stack[stack.length - 1] === "(" && tc[i] === ")") {
+      stack.pop();
     } else if (tc[i] === ")") {
-      leftCnt--;
+      // 최초에 ')' 닫힌 과로가 나왔을때를 대비해서 ('EXIT')이라는 의미없는 element 추가
+      stack.push("EXIT");
+      break;
     }
   }
 
-  if (leftCnt === 0) result.push("YES");
+  if (!stack.length) result.push("YES");
   else result.push("NO");
 });
 
