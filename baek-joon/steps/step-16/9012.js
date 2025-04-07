@@ -49,12 +49,13 @@ input.forEach((tc) => {
     } else if (stack[stack.length - 1] === "(" && tc[i] === ")") {
       stack.pop();
     } else if (tc[i] === ")") {
-      // 최초에 ')' 닫힌 과로가 나왔을때를 대비해서 ('EXIT')이라는 의미없는 element 추가
+      // 최초에 ')' 닫힌 과로가 나왔을때를 대비해서 'EXIT'이라는 의미없는 element 추가
       stack.push("EXIT");
       break;
     }
   }
 
+  // 최초에 ')' 닫힌 과로가 나왔을때 'EXIT'이 추가되어 else로 빠짐
   if (!stack.length) result.push("YES");
   else result.push("NO");
 });
