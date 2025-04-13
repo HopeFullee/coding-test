@@ -18,4 +18,4 @@ for (let i = Number(input) - 1; i > 0; i--) {
   cards.unshift(temp);
 }
 
-cards;
+console.log(...cards);
