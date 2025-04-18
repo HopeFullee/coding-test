@@ -17,6 +17,8 @@ const nums = input.map(Number).sort((a, b) => a - b);
 
 const getAverage = () => {
   const avg = nums.reduce((a, n) => a + n, 0) / n;
+  // 예제 3: (0 + 0 + (-1)) / 3 = -0.33333... 이를 반올림 하면 0인데
+  // string으로 안바꿔주면 숫자 -0 떠버려서 '틀렸습니다' 판정이뜸.
   return Math.round(avg).toString();
 };
 
