@@ -8,21 +8,18 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
-  const set = new Set();
-  const countArr = [];
+  let maxLen = 0;
+  let start = 0;
+  const lastIdx = {};
 
-  for (let i = 0; i < s.length; i++) {
-    if (!set.has(s[i])) {
-      set.add(s[i]);
-      countArr.push(set.size);
-    } else {
-      set.clear();
-      set.add(s[i]);
-      countArr.push(set.size);
+  [...s].forEach((ch, idx) => {
+    if (ch in lastIdx) {
+      start = Math.max(start, lastIdx[ch] + 1);
     }
-  }
 
-  return !countArr.length ? 0 : Math.max(...countArr);
+    lastIdx[ch] = idx;
+    maxLen = Math.max(maxLen, idx - start + 1);
+  });
+
+  return maxLen;
 };
-
-console.log(lengthOfLongestSubstring("dvdf"));
