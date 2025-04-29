@@ -1,6 +1,8 @@
 /*
   https://leetcode.com/problems/middle-of-the-linked-list/
   876. Middle of the Linked List
+
+  리스트노드 원리가 약?간? 이해가 가기 시작했다.. 
 */
 
 // Definition for singly-linked list.
