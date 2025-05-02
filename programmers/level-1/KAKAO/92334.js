@@ -12,33 +12,36 @@
   뭔가 모를 찝찝함이 많이 아쉽다..
   
   TODO - 고수님들 풀이를 보며 학습하기, 본인의 똥코드에 실망하기
+
+  25/05/02 - 23:30
+  첫 solve 이후 10분 정도 투자해서 리팩토링을 해보았다
+  나름 스스로 만족할만한 결과를 얻은거같다! 
 */
 
 function solution(id_list, report, k) {
-  const userInfo = {};
+  const reportDict = {};
   const reply = Array(id_list.length).fill(0);
 
-  for (let i = 0; i < id_list.length; i++) {
-    userInfo[id_list[i]] = {
-      count: 0,
-      reporters: [],
-    };
-  }
+  report.forEach((reportCase) => {
+    const [reporter, reported] = reportCase.split(" ");
 
-  report.forEach((n) => {
-    const [reporter, reported] = n.split(" ");
-
-    if (!userInfo[reported].reporters.includes(reporter)) {
-      userInfo[reported].count++;
-      userInfo[reported].reporters = [
-        ...userInfo[reported].reporters,
+    if (!reportDict[reported]) {
+      reportDict[reported] = {
+        count: 1,
+        reporters: [reporter],
+      };
+    } else if (!reportDict[reported].reporters.includes(reporter)) {
+      reportDict[reported].count++;
+      reportDict[reported].reporters = [
+        ...reportDict[reported].reporters,
         reporter,
       ];
     }
   });
 
-  Object.entries(userInfo).forEach(([_, info, idx]) => {
+  Object.entries(reportDict).forEach(([_, info]) => {
     const { count, reporters } = info;
+
     if (count >= k) {
       reporters.forEach((reporter) => {
         const reporterIdx = id_list.indexOf(reporter);
