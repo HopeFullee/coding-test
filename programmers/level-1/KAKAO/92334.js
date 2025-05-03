@@ -19,25 +19,16 @@
 */
 
 function solution(id_list, report, k) {
+  report = [...new Set(report)].map((v) => v.split(" "));
   const reportDict = {};
   const reply = Array(id_list.length).fill(0);
 
-  report.forEach((reportCase) => {
-    const [reporter, reported] = reportCase.split(" ");
-
-    if (!reportDict[reported]) {
-      reportDict[reported] = {
-        count: 1,
-        reporters: [reporter],
-      };
-    } else if (!reportDict[reported].reporters.includes(reporter)) {
-      reportDict[reported].count++;
-      reportDict[reported].reporters = [
-        ...reportDict[reported].reporters,
-        reporter,
-      ];
-    }
-  });
+  for (const [reporter, reported] of report) {
+    reportDict[reported] = {
+      count: reportDict[reported]?.count + 1 || 1,
+      reporters: [...(reportDict[reported]?.reporters || ""), reporter],
+    };
+  }
 
   Object.entries(reportDict).forEach(([_, info]) => {
     const { count, reporters } = info;
@@ -64,3 +55,26 @@ const report = [
 const k = 2;
 
 console.log(solution(id_list, report, k));
+
+// SET, MAP을 활용한 모범 답안
+function solution2(id_list, report, k) {
+  report = [...new Set(report)].map((s) => s.split(" "));
+  const reportCount = new Map();
+  const reportReply = new Map();
+
+  for (const [_, reported] of report) {
+    reportCount.set(reported, reportCount.get(reported) + 1 || 1);
+  }
+
+  for (const [reporter, reported] of report) {
+    if (reportCount.get(reported) >= k) {
+      reportReply.set(reporter, reportReply.get(reporter) + 1 || 1);
+    }
+  }
+
+  const answer = id_list.map((user) => reportReply.get(user) ?? 0);
+
+  return answer;
+}
+
+console.log(solution2(id_list, report, k));
