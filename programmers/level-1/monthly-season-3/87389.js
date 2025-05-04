@@ -1,6 +1,6 @@
 /*
   https://school.programmers.co.kr/learn/courses/30/lessons/87389
-  87389 - 나머지가 1이 되는 수 찾기
+  월간 코드 챌린지 시즌3 - 나머지가 1이 되는 수 찾기
 */
 
 function solution(n) {

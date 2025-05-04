@@ -1,6 +1,6 @@
 /*
   https://school.programmers.co.kr/learn/courses/30/lessons/12931
-  12931 - 자릿수 더하기
+  연습문제 - 자릿수 더하기
 */
 
 function solution(n) {

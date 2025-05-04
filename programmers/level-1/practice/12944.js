@@ -1,6 +1,6 @@
 /*
   https://school.programmers.co.kr/learn/courses/30/lessons/12944
-  12944 - 평균 구하기
+  연습문제 - 평균 구하기
 */
 
 // arr에 int를 다 더하고 arr의 길이만큼 나누면 평균값이 나온다.

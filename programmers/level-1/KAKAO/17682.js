@@ -1,7 +1,6 @@
 /*
   https://school.programmers.co.kr/learn/courses/30/lessons/17682
-  2018 KAKAO BLIND RECRUITMENT
-  17682 - [1차] 다트 게임
+  2018 KAKAO BLIND RECRUITMENT - [1차] 다트 게임
 */
 
 function solution(dartResult) {
