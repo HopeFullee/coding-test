@@ -19,7 +19,7 @@ function solution(n) {
 
   const sqrt = Math.sqrt(n);
 
-  if (sqrt % 1 === 0) {
+  if (n % sqrt === 0) {
     answer = Math.pow(sqrt + 1, 2);
   }
 
