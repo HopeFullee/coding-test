@@ -7,6 +7,6 @@ function solution(s) {
   return s.length === 4 || s.length === 6 ? !isNaN(s) : false;
 }
 
-const s = "1234";
+const s = "123456";
 
 console.log(solution(s));
