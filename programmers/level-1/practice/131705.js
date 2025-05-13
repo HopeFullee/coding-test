@@ -31,6 +31,8 @@ function solution2(number) {
   let result = 0;
 
   const combination = (current, start) => {
+    current;
+
     if (current.length === 3) {
       result += current.reduce((acc, cur) => acc + cur, 0) === 0 ? 1 : 0;
       return;
