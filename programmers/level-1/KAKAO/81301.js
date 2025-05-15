@@ -35,7 +35,9 @@ console.log(solution(s));
   [모범 답안]
   정규식 표현 없이 iterate loop의 index값으로 풀이 한 방법.
 
-  P.S 정규식 부터 생각한 본인은 반성이 필요하다..
+  [P.S] 
+  정규식 부터 생각한 본인은 반성이 필요하다..
+  그래도 풀 수 있었다는 점에 이의를 두고 더 발전하자!!!
 */
 
 function solution2(s) {
