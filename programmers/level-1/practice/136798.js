@@ -37,3 +37,32 @@ const limit = 3;
 const power = 2;
 
 console.log(solution(number, limit, power));
+
+/*
+  [모법 답안]
+  본인의 풀이처럼 half를 구하는것이 아닌 (j * j) <= n 까지의 회전으로 계산한 버전.
+
+  https://jsbench.me/ 
+  벤치 결과 최악의 경우 n = 10만회로 비교 결과 엄청난 성능차이를 확인했다.
+  본인의 코드가 88% 느림으로 나왔고, 이유는 (n / 2)로 half를 구하여 iterate 하는것 보다,
+  (j * j <= n) 만큼 iterate 하는것이 훨신더 효율적이였다.
+*/
+
+function solution2(number, limit, power) {
+  var answer = 0;
+
+  for (let n = 1; n <= number; n++) {
+    let count = 0;
+
+    for (let j = 1; j * j <= n; j++) {
+      if (j * j == n) count++;
+      else if (n % j == 0) count += 2;
+    }
+
+    if (count > limit) count = power;
+    answer += count;
+  }
+  return answer;
+}
+
+console.log(solution2(number, limit, power));
