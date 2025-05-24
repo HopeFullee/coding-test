@@ -70,3 +70,38 @@ function solution2(s, n) {
 }
 
 console.log(solution2(s, n));
+
+/*
+  [모범 답안2]
+  킹갓 정윤센세의 풀이식으로 풀어보자.
+
+  ASCII 코드를 직접 조작하여 이동하는 방식 보단 훨신 더 직관적인 코드로 느껴진다.
+  하지만 위에 solution2 함수와 비교한다면 ASCII 코드를 직접 조작한 코드가 조금더 
+  성능면에서 우위점에 있다.
+
+  아마 solution3 함수는 알파벳을 array에 담아 직관적인 대신,
+  idx별로 호출 하는 단계에서 약간의 시간이 더 걸리는것 같다.
+*/
+
+function solution3(s, n) {
+  let answer = "";
+
+  const alphabets = [...Array(26)].map((_, idx) => {
+    return String.fromCharCode(97 + idx);
+  });
+
+  for (const ch of s) {
+    if (ch !== " ") {
+      const idx = alphabets.indexOf(ch.toLowerCase()) + n;
+      const nextCh = alphabets[idx % alphabets.length];
+
+      answer += ch === ch.toUpperCase() ? nextCh.toUpperCase() : nextCh;
+    } else {
+      answer += ch;
+    }
+  }
+
+  return answer;
+}
+
+console.log(solution3(s, n));
