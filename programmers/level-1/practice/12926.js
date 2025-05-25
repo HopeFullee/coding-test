@@ -75,20 +75,16 @@ console.log(solution2(s, n));
   [모범 답안2]
   킹갓 정윤센세의 풀이식으로 풀어보자.
 
-  ASCII 코드를 직접 조작하여 이동하는 방식 보단 훨신 더 직관적인 코드로 느껴진다.
-  하지만 위에 solution2 함수와 비교한다면 ASCII 코드를 직접 조작한 코드가 조금더 
-  성능면에서 우위점에 있다.
-
-  아마 solution3 함수는 알파벳을 array에 담아 직관적인 대신,
-  idx별로 호출 하는 단계에서 약간의 시간이 더 걸리는것 같다.
+  solution2() 풀이 내 ASCII 코드를 직접 조작하여 range와 gap을 구해 이동하는 방식보단,
+  알파벳 문자열을 통해 n번 만큼 이동하는 방식이 훨신더 직관적이고 성능또한 우수하다.
 */
 
 function solution3(s, n) {
   let answer = "";
 
-  const alphabets = [...Array(26)].map((_, idx) => {
-    return String.fromCharCode(97 + idx);
-  });
+  const alphabets = [...Array(26)].reduce((acc, _, idx) => {
+    return acc + String.fromCharCode(97 + idx);
+  }, "");
 
   for (const ch of s) {
     if (ch !== " ") {
