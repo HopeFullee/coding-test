@@ -14,6 +14,6 @@ function solution(n) {
   return count;
 }
 
-const n = 20;
+const n = 100;
 
 console.log(solution(n));
