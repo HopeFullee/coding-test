@@ -5,7 +5,6 @@
 
 function solution(box, n) {
   const [x, y, z] = box;
-
   return parseInt(x / n) * parseInt(y / n) * parseInt(z / n);
 }
 
