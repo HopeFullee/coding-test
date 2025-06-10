@@ -13,6 +13,6 @@ function solution(n) {
   return ans;
 }
 
-const n = 25;
+const n = 24;
 
 console.log(solution(n));
