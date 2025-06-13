@@ -4,43 +4,45 @@
 */
 
 function solution(players, callings) {
-  const dict = {};
+  const map = new Map();
 
-  players.forEach(
-    (p, idx) =>
-      (dict[p] = {
-        front: players[idx - 1] ?? "first",
-        back: players[idx + 1] ?? "last",
-        rank: idx + 1,
-      })
-  );
+  players.forEach((p, idx) => map.set(p, idx));
 
-  for (const call of callings) {
-    const currPlayer = dict[call];
+  callings.forEach((call) => {
+    const currIdx = map.get(call);
+    const prevIdx = map.get(players[currIdx - 1]);
 
-    dict[call] = {
-      ...dict[currPlayer.front],
-      back: currPlayer.front,
-    };
+    [players[prevIdx], players[currIdx]] = [players[currIdx], players[prevIdx]];
 
-    if (dict[currPlayer.front]) {
-      dict[currPlayer.front] = {
-        ...currPlayer,
-        front: dict[currPlayer.front].back,
-      };
-    }
+    map.set(call, prevIdx);
+    map.set(players[currIdx], currIdx);
+  });
 
-    if (dict[currPlayer.back]) {
-      dict[currPlayer.back].front = currPlayer.front;
-    }
-  }
+  return players;
+}
 
-  return Object.entries(dict)
-    .sort((a, b) => a[1].rank - b[1].rank)
-    .map(([k]) => k);
+function solution2(players2, callings) {
+  const idxDict = {};
+
+  players2.forEach((p, idx) => (idxDict[p] = idx));
+
+  callings.forEach((currName) => {
+    const currIdx = idxDict[currName];
+    const prevName = players2[currIdx - 1];
+
+    idxDict[currName]--;
+    idxDict[prevName]++;
+
+    players2[currIdx] = prevName;
+    players2[currIdx - 1] = currName;
+  });
+
+  return players2;
 }
 
 const players = ["mumu", "soe", "poe", "kai", "mine"];
+const players2 = ["mumu", "soe", "poe", "kai", "mine"];
 const callings = ["kai", "kai", "mine", "mine"];
 
 console.log(solution(players, callings));
+console.log(solution2(players2, callings));
