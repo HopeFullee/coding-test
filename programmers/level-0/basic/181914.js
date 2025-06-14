@@ -8,5 +8,11 @@ function solution(number) {
   return sum % 9;
 }
 
+function solution2(number) {
+  return BigInt(number) % 9n;
+}
+
 const number = "78720646226947352489";
+
 console.log(solution(number));
+console.log(solution2(number));
