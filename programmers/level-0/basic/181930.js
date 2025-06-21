@@ -14,8 +14,8 @@ function solution(a, b, c) {
   return sumArr.reduce((a, sum) => a * sum);
 }
 
-const a = 2;
-const b = 6;
-const c = 1;
+const a = 4;
+const b = 4;
+const c = 4;
 
 console.log(solution(a, b, c));
