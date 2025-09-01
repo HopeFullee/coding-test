@@ -22,18 +22,18 @@ function solution2(arr, intervals) {
   return newArr;
 }
 
-const arr = [1, 2, 3, 4, 5];
-const intervals = [
-  [1, 3],
-  [0, 4],
-];
-
 // 멋쟁이 코딩 2
 function solution3(arr, intervals) {
   const newArr = intervals.flatMap(([start, end]) => arr.slice(start, end + 1));
 
   return newArr;
 }
+
+const arr = [1, 2, 3, 4, 5];
+const intervals = [
+  [1, 3],
+  [0, 4],
+];
 
 console.log(solution(arr, intervals));
 console.log(solution2(arr, intervals));
