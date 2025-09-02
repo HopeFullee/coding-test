@@ -4,10 +4,7 @@
 */
 
 function solution(num_list) {
-  return num_list.indexOf((n) => {
-    n;
-    return n == 4;
-  });
+  return num_list.findIndex((n) => n < 0);
 }
 
 const num_list = [12, 4, 15, 46, 38, -2, 15];

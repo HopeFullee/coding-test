@@ -4,7 +4,7 @@
 */
 
 function solution(my_string) {
-  return my_string.trim().split(/\s+/g);
+  return my_string.trim().split(/\s+/);
 }
 
 const my_string = " i    love  you";
