@@ -3,7 +3,7 @@
   코딩 기초 트레이닝 - 글자 지우기
 */
 
-// my_string에서 빼는 방식
+// my_string에서 indices를 뺀 방법
 function solution(my_string, indices) {
   indices = indices.sort((a, b) => a - b).map((n, idx) => n - idx);
 
@@ -14,7 +14,7 @@ function solution(my_string, indices) {
   return my_string;
 }
 
-// my_string에서 더하는 방식
+// my_string에서 indices가 아닌 character들만 남긴 방법
 function solution2(my_string, indices) {
   return [...my_string].filter((_, idx) => !indices.includes(idx)).join("");
 }
