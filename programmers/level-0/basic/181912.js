@@ -8,7 +8,6 @@ function solution(intStrs, k, s, l) {
 
   intStrs.forEach((str) => {
     const sliced = Number(str.slice(s, s + l));
-
     if (k < sliced) arr.push(sliced);
   });
 
