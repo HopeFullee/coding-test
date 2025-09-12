@@ -5,6 +5,7 @@
 
 function solution(arr, queries) {
   for (const [i, j] of queries) {
+    // 구조분해 할당으로 temp 변수 없이 싱글라인 처리 가능
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
