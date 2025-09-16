@@ -7,7 +7,6 @@ function solution(arr) {
   const head = arr.indexOf(2);
   const tail = arr.lastIndexOf(2);
   const range = arr.slice(head, tail + 1);
-
   return range.length ? range : [-1];
 }
 
