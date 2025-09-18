@@ -19,6 +19,6 @@ function solution(n) {
   return getFactorial(count) > n ? count - 1 : count;
 }
 
-const n = 7;
+const n = 5;
 
 console.log(solution(n));
