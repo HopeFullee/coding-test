@@ -19,6 +19,6 @@ function solution(str_list) {
   return some ? str_list : [];
 }
 
-const str_list = ["u", "u", "l", "u"];
+const str_list = ["u", "u", "u", "u"];
 
 console.log(solution(str_list));
