@@ -4,7 +4,7 @@
 */
 
 function solution(a, b) {
-  return (Number(a) + Number(b)).toString();
+  return (BigInt(a) + BigInt(b)).toString();
 }
 
 const a = "18446744073709551615";
