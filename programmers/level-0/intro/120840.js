@@ -23,7 +23,7 @@ function solution(balls, share) {
   return totalCombos;
 }
 
-const balls = 3;
-const share = 2;
+const balls = 5;
+const share = 3;
 
 console.log(solution(balls, share));
