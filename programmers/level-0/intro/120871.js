@@ -22,6 +22,6 @@ function solution(n) {
   return fuckedUpNumber;
 }
 
-const n = 15;
+const n = 10;
 
 console.log(solution(n));
