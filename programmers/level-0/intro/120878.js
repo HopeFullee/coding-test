@@ -35,9 +35,16 @@ function solution(a, b) {
   return isFinite ? 1 : 2;
 }
 
-const a = 11;
-const b = 22;
+function solution2(a, b) {
+  while (b % 2 === 0) b /= 2;
+  while (b % 5 === 0) b /= 5;
+
+  if (a % b === 0) b = 1;
+  return b === 1 ? 1 : 2;
+}
+
+const a = 18;
+const b = 24;
 
 console.log(solution(a, b));
-
-2 * 5 * 2;
+console.log(solution2(a, b));
