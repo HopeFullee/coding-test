@@ -13,7 +13,8 @@ function solution(array) {
   const sort = Object.entries(hash).sort((a, b) => b[1] - a[1]);
 
   if (sort.length === 1 || sort[0][1] > sort[1][1]) return Number(sort[0][0]);
-  else return -1;
+
+  return -1;
 }
 
 const array = [1];
