@@ -3,7 +3,7 @@
   bronze tier 5 - 기찍 N
 */
 
-// const input = require("fs").readFileSync("/dev/stdin").toString().trim();
+const input = require("fs").readFileSync("/dev/stdin").toString().trim();
 
 function solution(input) {
   return [...Array(Number(input))].reduce((a, _, idx) => {
