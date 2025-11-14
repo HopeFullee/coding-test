@@ -12,6 +12,7 @@
 
 const input = [24, 18];
 
+// 유클리드 호제법 기얏꿀!!!
 const Euclidean = (input) => {
   let a = input[0];
   let b = input[1];
