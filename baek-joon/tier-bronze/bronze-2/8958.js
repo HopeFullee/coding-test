@@ -41,5 +41,3 @@ function solution(input) {
 
   return ans;
 }
-
-console.log(solution(input));
