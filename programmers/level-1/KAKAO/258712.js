@@ -45,3 +45,5 @@ const friends = ["a", "b", "c"];
 const gifts = ["a b", "b a", "c a", "a c", "a c", "c a"];
 
 console.log(solution(friends, gifts));
+
+4;
