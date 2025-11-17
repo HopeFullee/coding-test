@@ -19,9 +19,6 @@ function kLengthApart(nums, k) {
     const idx = nums.indexOf(1);
     nums[idx] = 0;
 
-    idx;
-    prevOneIdx;
-
     if (idx - prevOneIdx < k + 1) {
       return false;
     }
