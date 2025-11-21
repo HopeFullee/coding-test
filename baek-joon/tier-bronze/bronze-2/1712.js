@@ -10,7 +10,7 @@
 //   .split(" ")
 //   .map(Number);
 
-const input = [2100000000, 9, 10];
+const input = [1000, 70, 170];
 
 function solution(input) {
   const [A, B, C] = input;
@@ -19,7 +19,7 @@ function solution(input) {
 
   let salesProfit = C - B;
 
-  return A / salesProfit + 1;
+  return parseInt(A / salesProfit + 1);
 }
 
 console.log(solution(input));
