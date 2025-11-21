@@ -23,7 +23,7 @@ function solution(input) {
       .sort((a, b) => a - b);
 
     const isTriangle = A ** 2 + B ** 2 === C ** 2;
-    console.log(isTriangle ? "right" : "wrong");
+    ans += isTriangle ? "right\n" : "wrong\n";
   });
 
   return ans;
